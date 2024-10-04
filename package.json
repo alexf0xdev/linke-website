@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate",
+    "prismaDeploy": "dotenv -e .env.local prisma migrate deploy",
     "prismaDev": "dotenv -e .env.local prisma migrate dev",
     "prismaGenerate": "dotenv -e .env.local prisma generate"
   },

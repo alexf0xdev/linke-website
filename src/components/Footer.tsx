@@ -9,7 +9,7 @@ const Footer = () => {
         This project is{' '}
         <Link
           className={cn('text-cyan-500')}
-          href='https://github.com/alexf0xdev/linke'
+          href='https://github.com/alexf0xdev/linke-website'
         >
           open source
         </Link>
