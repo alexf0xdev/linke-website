@@ -89,9 +89,9 @@ const PageForm: FC<PageFormType> = ({ type, id, defaultValues }) => {
     }
 
     const { data: page, error } =
-      type === 'update'
-        ? await updatePage(id, formData)
-        : await createPage(formData)
+      type === 'create'
+        ? await createPage(formData)
+        : await updatePage(id, formData)
 
     if (error) {
       setError(error)
@@ -133,7 +133,7 @@ const PageForm: FC<PageFormType> = ({ type, id, defaultValues }) => {
             render={({ field: { onChange } }) => (
               <ImageUpload
                 previewUrl={previewUrl}
-                onChange={(url, image) => {
+                onImageChange={(url, image) => {
                   setPreviewUrl(url)
                   onChange(image)
                 }}

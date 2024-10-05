@@ -8,6 +8,17 @@ import { revalidatePath } from 'next/cache'
 import { getCurrentUser } from './current-user'
 import { utapi } from '../server/uploadthing'
 
+export const getPages = async () => {
+  return (await prisma.page.findMany({
+    select: {
+      id: true,
+      name: true,
+      link: true,
+      userId: true,
+    },
+  })) as IPage[]
+}
+
 export const getPage = async (id: string) => {
   return (await prisma.page.findUnique({
     where: { id },

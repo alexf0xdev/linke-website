@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { LuCheck, LuLink2 } from 'react-icons/lu'
 
 const ShareLinkButton = ({ url }: { url: string }) => {
