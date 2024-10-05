@@ -11,7 +11,6 @@ interface ICreateButtonForm {
   defaultValues?: undefined
   onFormSubmit: (data: ButtonValues) => void
   onClose: () => void
-  onRemove?: undefined
 }
 
 interface IUpdateButtonForm {
