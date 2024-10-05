@@ -62,6 +62,7 @@ const PageForm: FC<PageFormType> = ({ type, id, defaultValues }) => {
   useEffect(() => {
     if (createButtonModal.data) {
       setValue('buttons', [createButtonModal.data, ...buttons])
+      createButtonModal.reset()
     }
   }, [createButtonModal.data])
 
@@ -73,6 +74,7 @@ const PageForm: FC<PageFormType> = ({ type, id, defaultValues }) => {
           button.id === updateButtonModal.id ? updateButtonModal.data : button,
         ) as IButton[],
       )
+      updateButtonModal.reset()
     }
   }, [updateButtonModal.data])
 

@@ -8,12 +8,14 @@ interface ICreateButtonModal {
   onOpen: () => void
   onClose: () => void
   onSubmit: (data: ICreateButton) => void
+  reset: () => void
 }
 
 export const useCreateButtonModal = create<ICreateButtonModal>((set) => ({
   open: false,
   data: null,
   onOpen: () => set({ open: true }),
-  onClose: () => set({ open: false, data: null }),
+  onClose: () => set({ open: false }),
   onSubmit: (data) => set({ data: { ...data, id: uuid() } }),
+  reset: () => set({ data: null }),
 }))
