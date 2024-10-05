@@ -8,7 +8,7 @@ import {
 } from './constants'
 
 export const ButtonSchema = z.object({
-  text: z.string().min(1, 'Text required').max(20, 'Maximum 20 characters'),
+  text: z.string().min(1, 'Text required').max(50, 'Maximum 50 characters'),
   href: z
     .string()
     .min(1, 'Url required')
