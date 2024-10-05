@@ -5,19 +5,19 @@ import { ChangeEvent, FC, useRef } from 'react'
 
 interface IImageUpload {
   previewUrl: string
-  onChange: (url: string, image: File) => void
+  onImageChange: (url: string, image: File) => void
 }
 
-const ImageUpload: FC<IImageUpload> = ({ previewUrl, onChange }) => {
+const ImageUpload: FC<IImageUpload> = ({ previewUrl, onImageChange }) => {
   const ref = useRef<HTMLInputElement>(null)
 
-  const onImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const image = e.target.files![0]
 
     if (image) {
       const url = URL.createObjectURL(image)
 
-      onChange(url, image)
+      onImageChange(url, image)
     }
   }
 
@@ -31,7 +31,7 @@ const ImageUpload: FC<IImageUpload> = ({ previewUrl, onChange }) => {
       >
         Upload image
       </Button>
-      <input type='file' ref={ref} onChange={onImageChange} hidden />
+      <input type='file' ref={ref} onChange={onChange} hidden />
     </div>
   )
 }
