@@ -15,6 +15,6 @@ export const useUpdateButtonModal = create<IUpdateButtonModal>((set) => ({
   id: '',
   data: null,
   onOpen: (id, data) => set({ open: true, id, data }),
-  onClose: () => set({ open: false }),
+  onClose: () => set({ open: false, id: '', data: null }),
   onSubmit: (data) => set(({ id }) => ({ data: { ...data, id } })),
 }))

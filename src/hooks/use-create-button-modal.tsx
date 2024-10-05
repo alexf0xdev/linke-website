@@ -14,6 +14,6 @@ export const useCreateButtonModal = create<ICreateButtonModal>((set) => ({
   open: false,
   data: null,
   onOpen: () => set({ open: true }),
-  onClose: () => set({ open: false }),
+  onClose: () => set({ open: false, data: null }),
   onSubmit: (data) => set({ data: { ...data, id: uuid() } }),
 }))
