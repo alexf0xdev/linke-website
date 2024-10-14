@@ -2,7 +2,7 @@ import { IButton, ICreateButton } from '@/types/button'
 import { create } from 'zustand'
 
 interface IUpdateButtonModal {
-  open: boolean
+  isOpen: boolean
   id: string
   data: IButton | null
   onOpen: (id: string, data: IButton) => void
@@ -11,10 +11,10 @@ interface IUpdateButtonModal {
 }
 
 export const useUpdateButtonModal = create<IUpdateButtonModal>((set) => ({
-  open: false,
+  isOpen: false,
   id: '',
   data: null,
-  onOpen: (id, data) => set({ open: true, id, data }),
-  onClose: () => set({ open: false }),
+  onOpen: (id, data) => set({ isOpen: true, id, data }),
+  onClose: () => set({ isOpen: false }),
   onSubmit: (data) => set(({ id }) => ({ data: { ...data, id } })),
 }))

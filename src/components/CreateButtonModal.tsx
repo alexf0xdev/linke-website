@@ -5,10 +5,10 @@ import Modal from './Modal'
 import { useCreateButtonModal } from '@/hooks/use-create-button-modal'
 
 const CreateButtonModal = () => {
-  const { open, onClose, onSubmit } = useCreateButtonModal()
+  const { isOpen, onClose, onSubmit } = useCreateButtonModal()
 
   return (
-    <Modal open={open} onClose={onClose} title='Create button'>
+    <Modal isOpen={isOpen} onClose={onClose} title='Create button'>
       <ButtonForm type='create' onClose={onClose} onFormSubmit={onSubmit} />
     </Modal>
   )

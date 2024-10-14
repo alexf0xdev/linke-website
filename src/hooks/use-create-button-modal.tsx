@@ -3,7 +3,7 @@ import { create } from 'zustand'
 import { v4 as uuid } from 'uuid'
 
 interface ICreateButtonModal {
-  open: boolean
+  isOpen: boolean
   data: IButton | null
   onOpen: () => void
   onClose: () => void
@@ -12,10 +12,10 @@ interface ICreateButtonModal {
 }
 
 export const useCreateButtonModal = create<ICreateButtonModal>((set) => ({
-  open: false,
+  isOpen: false,
   data: null,
-  onOpen: () => set({ open: true }),
-  onClose: () => set({ open: false }),
+  onOpen: () => set({ isOpen: true }),
+  onClose: () => set({ isOpen: false }),
   onSubmit: (data) => set({ data: { ...data, id: uuid() } }),
   reset: () => set({ data: null }),
 }))

@@ -10,12 +10,16 @@ const ThemeSwitcher = () => {
 
   const { resolvedTheme, setTheme } = useTheme()
 
-  if (!mounted) {
-    return <div className={cn('w-10 h-10')} />
-  }
+  const isDark = resolvedTheme === 'dark'
 
   const handleClick = () => {
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+    setTheme(isDark ? 'light' : 'dark')
+  }
+
+  const Icon = isDark ? LuMoon : LuSun
+
+  if (!mounted) {
+    return <div className={cn('w-10 h-10')} />
   }
 
   return (
@@ -25,11 +29,7 @@ const ThemeSwitcher = () => {
       )}
       onClick={handleClick}
     >
-      {resolvedTheme === 'dark' ? (
-        <LuMoon className={cn('text-zinc-600 dark:text-zinc-400 w-6 h-6')} />
-      ) : (
-        <LuSun className={cn('text-zinc-600 dark:text-zinc-400 w-6 h-6')} />
-      )}
+      <Icon className={cn('text-zinc-600 dark:text-zinc-400 w-6 h-6')} />
     </button>
   )
 }

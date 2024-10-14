@@ -23,9 +23,9 @@ const Select: FC<ISelect> = ({
   defaultText = 'No selected',
   errorMessage,
 }) => {
-  const [open, setOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const ref = useClickOutside(() => setOpen(false))
+  const ref = useClickOutside(() => setIsOpen(false))
 
   const selectedOption = useMemo(
     () => options.find((option) => option.value === value),
@@ -40,16 +40,16 @@ const Select: FC<ISelect> = ({
             'flex items-center justify-between bg-zinc-300 dark:bg-zinc-700 text-xl text-left mt-2 pl-7 pr-4 py-4 w-full rounded-md',
           )}
           type='button'
-          onClick={() => setOpen((prev) => !prev)}
+          onClick={() => setIsOpen((prev) => !prev)}
         >
           {selectedOption?.name ?? defaultText}
-          <LuChevronDown className={cn('w-6 h-6', open && 'rotate-180')} />
+          <LuChevronDown className={cn('w-6 h-6', isOpen && 'rotate-180')} />
         </button>
         {errorMessage && (
           <p className={cn('text-red-500 mt-1')}>{errorMessage}</p>
         )}
       </div>
-      {open && (
+      {isOpen && (
         <div
           className={cn(
             'absolute inset-x-0 flex flex-col gap-1 bg-zinc-300 dark:bg-zinc-700 mt-2 p-2 rounded-md',
@@ -67,7 +67,7 @@ const Select: FC<ISelect> = ({
               type='button'
               onClick={() => {
                 onChange(option.value)
-                setOpen(false)
+                setIsOpen(false)
               }}
             >
               {option.name}

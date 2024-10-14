@@ -5,10 +5,10 @@ import Modal from './Modal'
 import { useUpdateButtonModal } from '@/hooks/use-update-button-modal'
 
 const UpdateButtonModal = () => {
-  const { open, data, onClose, onSubmit } = useUpdateButtonModal()
+  const { isOpen, data, onClose, onSubmit } = useUpdateButtonModal()
 
   return (
-    <Modal open={open} onClose={onClose} title='Update button'>
+    <Modal isOpen={isOpen} onClose={onClose} title='Update button'>
       <ButtonForm
         type='update'
         defaultValues={{

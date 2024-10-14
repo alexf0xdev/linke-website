@@ -14,9 +14,9 @@ const CurrentUserDropdown = ({
 }: {
   currentUser: Session['user'] | undefined
 }) => {
-  const [open, setOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const ref = useClickOutside(() => setOpen(false))
+  const ref = useClickOutside(() => setIsOpen(false))
 
   if (!currentUser) {
     return (
@@ -28,10 +28,10 @@ const CurrentUserDropdown = ({
 
   return (
     <div className='relative z-10' ref={ref}>
-      <button onClick={() => setOpen((prev) => !prev)}>
+      <button onClick={() => setIsOpen((prev) => !prev)}>
         <Avatar imageUrl={currentUser.image!} size='small' />
       </button>
-      {open && (
+      {isOpen && (
         <div
           className={cn(
             'absolute right-0 flex flex-col bg-zinc-200 dark:bg-zinc-800 p-2 w-40 rounded-md',

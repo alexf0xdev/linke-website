@@ -7,19 +7,19 @@ import { LuX } from 'react-icons/lu'
 
 interface IModal {
   title?: string
-  open: boolean
+  isOpen: boolean
   onClose: () => void
   children: ReactNode
 }
 
-const Modal: FC<IModal> = ({ title, open, onClose, children }) => {
+const Modal: FC<IModal> = ({ title, isOpen, onClose, children }) => {
   const ref = useClickOutside(onClose)
 
   useEffect(() => {
-    document.documentElement.classList.toggle('overflow-hidden', open)
-  }, [open])
+    document.documentElement.classList.toggle('overflow-hidden', isOpen)
+  }, [isOpen])
 
-  if (!open) return null
+  if (!isOpen) return null
 
   return (
     <div
