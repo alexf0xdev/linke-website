@@ -1,23 +1,34 @@
-# This is a Linke website
+# Linke Website
 
-This project use Server Actions, Prisma, NextAuth and of course Next.js with App Router
+This project use Server Actions, [Prisma](https://www.prisma.io/), [NextAuth](https://next-auth.js.org/) and build with [Next.js](https://nextjs.org/).
 
-## Getting Started
+## Install
 
-First, run the development server:
+Clone the repository and install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/alexf0xdev/website.git
+cd website
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## .env Variable
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a *.env* file in the project directory and fill it with the following *.enx.example*.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Database
+
+Synchronize the database with *prisma.scheme*.
+
+## Run project
+
+Run the project using:
+
+```bash
+pnpm dev
+```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/alexf0xdev/website/blob/main/LICENSE) file for details.
+
