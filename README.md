@@ -18,7 +18,11 @@ Create a ```.env``` file in the project directory and fill it with the following
 
 ## Database
 
-Synchronize the database with ```prisma.scheme```.
+Synchronize the database with ```prisma.scheme```:
+
+```bash
+pnpm prisma migrate dev --name init
+```
 
 ## Run project
 
