@@ -14,11 +14,11 @@ pnpm install
 
 ## .env Variable
 
-Create a *.env* file in the project directory and fill it with the following *.enx.example*.
+Create a ```.env``` file in the project directory and fill it with the following ```.enx.example```.
 
 ## Database
 
-Synchronize the database with *prisma.scheme*.
+Synchronize the database with ```prisma.scheme```.
 
 ## Run project
 
