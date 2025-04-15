@@ -1,6 +1,6 @@
 # Linke Website
 
-This project use Server Actions, [Prisma](https://www.prisma.io/), [NextAuth](https://next-auth.js.org/) and build with [Next.js](https://nextjs.org/).
+This project use [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations), [Prisma](https://www.prisma.io/), [NextAuth](https://next-auth.js.org/) and build with [Next.js](https://nextjs.org/).
 
 ## Install
 
