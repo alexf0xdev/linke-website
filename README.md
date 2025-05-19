@@ -12,7 +12,7 @@ cd website
 pnpm install
 ```
 
-## Fill .env variable
+## Fill environment variable
 
 Create a ```.env``` file in the project directory and fill it with the following ```.enx.example```.
 
