@@ -7,16 +7,16 @@ This project use [Server Actions](https://nextjs.org/docs/app/building-your-appl
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/alexf0xdev/website.git
+git clone https://github.com/alexf0xdev/linke-website.git
 cd website
 pnpm install
 ```
 
-## .env Variable
+## Fill .env variable
 
 Create a ```.env``` file in the project directory and fill it with the following ```.enx.example```.
 
-## Database
+## Sync database
 
 Synchronize the database with ```prisma.scheme```:
 
@@ -34,5 +34,5 @@ pnpm dev
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/alexf0xdev/website/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/alexf0xdev/linke-website/blob/main/LICENSE) file for details.
 
